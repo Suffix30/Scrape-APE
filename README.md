@@ -25,7 +25,7 @@ Before you can run Scrape-APE, you'll need to have Python installed on your syst
 First, clone the Scrape-APE repository to your local machine using the following command in your terminal:
 
 ```sh
-git clone https://github.com/yourusername/scrape-ape.git
+git clone https://github.com/Suffix30/Scrape-APE.git
 cd scrape-ape
 ```
 
