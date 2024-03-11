@@ -31,7 +31,7 @@ You will also need the following packages and tools:
 Clone Scrape-APE to your local system:
 
 ```sh
-git clone https://github.com/Suffix30/Scrape-APE.git
+git clone https://github.com/yourusername/scrape-ape.git
 cd scrape-ape
 ```
 
@@ -88,8 +88,4 @@ Open for personal and commercial use under the terms in the LICENSE file.
 
 ## Acknowledgments
 
-<<<<<<< HEAD
 - Thanks to the creators of BeautifulSoup, Selenium, and Puppeteer.
-=======
-- Special thanks to the developers of BeautifulSoup and Selenium for providing the essential tools for web scraping.
->>>>>>> 9eca7f84fad5aa3db6d55644b259617e9eba351b
