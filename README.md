@@ -1,73 +1,95 @@
+
 # Scrape-APE
 
-Scrape-APE is an innovative web scraping application designed to efficiently extract information from various types of websites and save the data for further analysis or use. Built using Python, this tool leverages the powerful libraries BeautifulSoup and Selenium to navigate and parse web pages, making it capable of handling both static and dynamic content. The application features a user-friendly graphical interface, making web scraping accessible to users with varying levels of technical expertise.
+![Scrape-APE Icon](Scrape-APE.ico)
+
+Scrape-APE is an advanced web scraping toolkit designed to efficiently gather data from a wide range of websites, including those that rely on JavaScript for dynamic content rendering. Utilizing Python for back-end processing and Puppeteer with Node.js for handling JavaScript-heavy websites, this application offers a versatile approach to web scraping. It comes with a user-friendly graphical interface, making it accessible to both beginners and seasoned professionals.
 
 ## Features
 
-- Support for a wide range of website types including static, dynamic, CMS-based, e-commerce, and more.
-- User-friendly graphical interface for easy operation.
-- Customizable scraping tasks to target specific website types or content.
-- Ability to save scraped content in a structured format for easy access and analysis.
+- Comprehensive scraping capabilities for static, dynamic, CMS-based, e-commerce websites, and more.
+- Integration with Puppeteer for JavaScript execution, enhancing scraping from dynamic web pages.
+- A straightforward graphical user interface to simplify the web scraping process.
+- Customizable scraping tasks to focus on specific types of websites or data requirements.
+- Efficient data storage in structured formats for subsequent analysis or utilization.
 
 ## Getting Started
 
 ### Prerequisites
 
-Before you can run Scrape-APE, you'll need to have Python installed on your system (Python 3.6 or later is recommended). Additionally, you'll need the following Python packages:
+Ensure you have Python (version 3.6 or newer) and Node.js installed on your machine to run Scrape-APE and its components.
 
+You will also need the following packages and tools:
 - BeautifulSoup4
 - Selenium
+- Puppeteer
 
 ### Installation
 
 #### Step 1: Clone the Repository
 
-First, clone the Scrape-APE repository to your local machine using the following command in your terminal:
+Clone Scrape-APE to your local system:
 
 ```sh
 git clone https://github.com/Suffix30/Scrape-APE.git
 cd scrape-ape
 ```
 
-#### Step 2: Install Required Python Packages
+#### Step 2: Install Required Packages
 
-Install BeautifulSoup4 and Selenium directly using pip. Open the terminal in VS Code (`Ctrl+``) and enter the following commands:
+##### Python Packages
 
 ```sh
 pip install beautifulsoup4
 pip install selenium
 ```
 
-These commands install the necessary Python libraries to run Scrape-APE.
+##### Node.js Packages
 
-#### Step 3: Set Up WebDriver
+```sh
+npm install puppeteer
+```
 
-For web scraping dynamic websites that require JavaScript execution, Selenium needs a WebDriver. Depending on your preferred web browser, download and set up the appropriate WebDriver:
+#### Step 3: WebDriver Setup
 
-- **Chrome:** Download ChromeDriver from [ChromeDriver - WebDriver for Chrome](https://sites.google.com/a/chromium.org/chromedriver/). Ensure it's placed in a directory included in your system's PATH, or specify its location directly in your script.
-  
-- **Firefox:** Download GeckoDriver from [GitHub - mozilla/geckodriver](https://github.com/mozilla/geckodriver/releases). Similar to ChromeDriver, make sure it's accessible via your system's PATH or referenced directly in your code.
+To scrape dynamic websites with Selenium, you'll need a WebDriver:
+- **Chrome:** Download [ChromeDriver](https://sites.google.com/a/chromium.org/chromedriver/).
+- **Firefox:** Download [GeckoDriver](https://github.com/mozilla/geckodriver/releases).
 
-- **Others:** For other browsers like Edge or Safari, please refer to their respective documentation for WebDriver installation instructions.
+Make sure the driver is in your PATH or specified in your script.
 
-### Running Scrape-APE in VS Code
+### Usage
 
-After installing the required packages and setting up WebDriver, you're ready to run Scrape-APE. Open the project folder in VS Code, then use the terminal (`Ctrl+``) to execute the script:
+#### Running Scrape-APE with Python
+
+Execute the Python script to launch the GUI and start scraping:
 
 ```sh
 python scrape-ape.py
 ```
 
-This command launches the Scrape-APE application, providing you with a GUI to start your web scraping tasks.
+#### Using Puppeteer for JavaScript-Heavy Websites
+
+Run the following command to scrape websites with JavaScript:
+
+```sh
+node scrape-ape-puppeteer.js <URL>
+```
+
+Replace `<URL>` with the website you wish to scrape.
 
 ## Contributing
 
-Contributions to Scrape-APE are welcome! Feel free to fork the repository, improve the existing codebase or add new features, and submit a pull request. Whether it's fixing bugs, adding documentation, or suggesting new functionality, your contributions are greatly appreciated.
+Contributions are welcome! Feel free to fork the repo, make improvements, and submit a pull request.
 
 ## License
 
-This project is open to the public for personal and commercial use. You can clone, modify, and distribute the software in accordance with the terms specified in the LICENSE file.
+Open for personal and commercial use under the terms in the LICENSE file.
 
 ## Acknowledgments
 
+<<<<<<< HEAD
+- Thanks to the creators of BeautifulSoup, Selenium, and Puppeteer.
+=======
 - Special thanks to the developers of BeautifulSoup and Selenium for providing the essential tools for web scraping.
+>>>>>>> 9eca7f84fad5aa3db6d55644b259617e9eba351b

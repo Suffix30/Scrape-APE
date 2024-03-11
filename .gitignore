@@ -1,0 +1,31 @@
+# Node modules
+node_modules/
+
+# Compiled Python files
+*.pyc
+
+# Compiled Python bytecode
+__pycache__/
+
+# Environment configuration file
+.env
+
+# Web browser driver files
+chromedriver.exe
+geckodriver.exe
+
+# IDE files
+.vscode/
+.idea/
+
+# Logs
+logs/
+
+# Compiled files
+*.class
+*.jar
+*.war
+*.ear
+
+# Dependency directories
+venv/
