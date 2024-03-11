@@ -3,7 +3,7 @@
 
 ![Scrape-APE Icon](Scrape-APE.ico)
 
-Scrape-APE is an advanced web scraping toolkit designed to efficiently gather data from a wide range of websites, including those that rely on JavaScript for dynamic content rendering. Utilizing Python for back-end processing and Puppeteer with Node.js for handling JavaScript-heavy websites, this application offers a versatile approach to web scraping. It comes with a user-friendly graphical interface, making it accessible to both beginners and seasoned professionals.
+Scrape-APE is a web scraping toolkit designed to "somewhat" gather data from a wide range of websites, including those that rely on JavaScript for dynamic content rendering. Utilizing Python for back-end processing and Puppeteer with Node.js for handling JavaScript-heavy websites, this application offers a Ghetto approach to web scraping. It comes with a user-friendly graphical interface, making it accessible to both beginners and seasoned professionals. ( I had to build it for class ) But got the grade for making it within the 90min. Contribute to it, make it your own, whatever. Was a fun build.
 
 ## Features
 
