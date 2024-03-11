@@ -31,7 +31,7 @@ You will also need the following packages and tools:
 Clone Scrape-APE to your local system:
 
 ```sh
-git clone https://github.com/yourusername/scrape-ape.git
+git clone https://github.com/Suffix30/Scrape-APE.git
 cd scrape-ape
 ```
 
@@ -75,6 +75,7 @@ Run the following command to scrape websites with JavaScript:
 ```sh
 node scrape-ape-puppeteer.js <URL>
 ```
+or just add the url in the provided URL entry when running scrape-ape.py from the terminal
 
 Replace `<URL>` with the website you wish to scrape.
 
