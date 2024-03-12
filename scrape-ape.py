@@ -34,7 +34,7 @@ website_types = {
     'Landing Pages': ['landing page']
 }
 
-def play_youtube_video():
+def nggyu():
     webbrowser.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
 
 def scrape_custom_page():
@@ -237,7 +237,7 @@ def main():
     button_frame = tk.Frame(root)
     button_frame.pack(pady=10)
 
-    current_page_button = tk.Button(button_frame, text="NGGYU", command=play_youtube_video)
+    current_page_button = tk.Button(button_frame, text="NGGYU", command=nggyu)
     current_page_button.grid(row=0, column=0, padx=20)
 
     custom_page_button = tk.Button(button_frame, text="Scrape Custom Page", command=scrape_custom_page)
