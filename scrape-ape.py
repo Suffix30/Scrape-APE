@@ -129,36 +129,27 @@ def scrape_and_save_page_source():
         if current_url:
             page_source = driver.page_source
             soup = BeautifulSoup(page_source, 'html.parser')
-
             page_source_path = os.path.join(os.getcwd(), 'page-source')
             os.makedirs(page_source_path, exist_ok=True)
-
             css_content = extract_css(soup)
             js_content = extract_js(soup, current_url)
-
             for script_or_style in soup(['script', 'style']):
                 script_or_style.extract()
-
             main_html_file_path = os.path.join(page_source_path, 'main.html')
             with open(main_html_file_path, 'w', encoding='utf-8') as main_html_file:
                 main_html_file.write(page_source)
-
             index_html_file_path = os.path.join(page_source_path, 'index.html')
             with open(index_html_file_path, 'w', encoding='utf-8') as index_html_file:
                 html_only = soup.find('html')
                 index_html_file.write(html_only.prettify() if html_only else '')
-
             css_file_path = os.path.join(page_source_path, 'styles.css')
             with open(css_file_path, 'w', encoding='utf-8') as css_file:
                 css_file.write(css_content)
-
             js_file_path = os.path.join(page_source_path, 'scripts.js')
             with open(js_file_path, 'w', encoding='utf-8') as js_file:
                 js_file.write(js_content)
-
             add_to_log("Page source, CSS, and JS saved successfully to " + page_source_path)
             messagebox.showinfo("Success", "Page source, CSS, and JS have been saved successfully.")
-
             extract_and_save_resources(soup, current_url, page_source_path)
             retrieve_scraped_resources()  
     except WebDriverException as e:
@@ -184,7 +175,6 @@ def extract_js(soup, base_url):
                 js_url = src
             else:
                 js_url = base_url + src
-
             js_content += f'// External script: {js_url}\n'
             try:
                 response = requests.get(js_url)
@@ -202,9 +192,7 @@ def run_puppeteer_script():
         add_to_log("Error: No URL provided.")
         messagebox.showerror("Error", "Please enter a URL to scrape.")
         return
-
     puppeteer_command = ['node', 'scrape-ape-puppeteer.js', custom_url]
-
     try:
         completed_process = subprocess.run(puppeteer_command, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
         add_to_log(completed_process.stdout)
@@ -216,7 +204,6 @@ def run_puppeteer_script():
 def main():
     global driver, log_text, url_entry
     driver = webdriver.Chrome()
-
     root = tk.Tk()
     root.title("Scrape - APE")
     window_width = 550
@@ -226,52 +213,36 @@ def main():
     x_coordinate = (screen_width - window_width) // 2
     y_coordinate = (screen_height - window_height) // 2
     root.geometry(f"{window_width}x{window_height}+{x_coordinate}+{y_coordinate}")
-
     if getattr(sys, 'frozen', False):
         datadir = os.path.dirname(sys.executable)
     else:
         datadir = os.path.dirname(os.path.realpath(__file__))
-
     root.iconbitmap(os.path.join(datadir, 'Scrape-APE.ico'))
-
     button_frame = tk.Frame(root)
     button_frame.pack(pady=10)
-
     current_page_button = tk.Button(button_frame, text="NGGYU", command=nggyu)
     current_page_button.grid(row=0, column=0, padx=20)
-
     custom_page_button = tk.Button(button_frame, text="Scrape Custom Page", command=scrape_custom_page)
     custom_page_button.grid(row=0, column=1, padx=20)
-
     page_source_button = tk.Button(button_frame, text="Scrape Page Source", command=scrape_and_save_page_source)
     page_source_button.grid(row=0, column=2, padx=20)
-
     puppeteer_button = tk.Button(button_frame, text="Run Puppeteer Script", command=run_puppeteer_script)
     puppeteer_button.grid(row=0, column=3, padx=20)
-
     url_frame = tk.Frame(root)
     url_frame.pack(pady=10)
-
     url_label = tk.Label(url_frame, text="URL:")
     url_label.grid(row=0, column=0)
-
     url_entry = tk.Entry(url_frame, width=40)
     url_entry.grid(row=0, column=1)
-
     log_frame = tk.Frame(root)
     log_frame.pack(pady=10)
-
     log_text = tk.Text(log_frame, height=30, width=60)
     log_text.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
-
     log_scroll = tk.Scrollbar(log_frame, orient=tk.VERTICAL, command=log_text.yview)
     log_scroll.pack(side=tk.RIGHT, fill=tk.Y)
     log_text.config(yscrollcommand=log_scroll.set)
-
     log_frame.place(relx=0.5, rely=1.0, anchor=tk.S, y=-2)
-
     root.mainloop()
-
 
 if __name__ == "__main__":
     main()
